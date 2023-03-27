@@ -13,8 +13,12 @@ class AuthPage(BasePage):
         self.email = driver.find_element(*AuthLocators.AUTH_EMAIL)
         self.passw = driver.find_element(*AuthLocators.AUTH_PASS)
         self.btn = driver.find_element(*AuthLocators.AUTH_BTN)
-        time.sleep(3)
+        self.reg = driver.find_element(*AuthLocators.REG_LINK)
+        self.phone_element = driver.find_element(*AuthLocators.PHONE_ELEMENT)
+        # time.sleep(1)
 
+    def get_phone_element(self):
+        return self.phone_element
 
     def enter_phone(self, value):
         self.email.send_keys(value)
@@ -28,3 +32,8 @@ class AuthPage(BasePage):
     def btn_click(self):
         self.btn.click()
 
+    def reg_click(self):
+        self.reg.click()
+
+    def phone_element_click(self):
+        self.phone_element.click()

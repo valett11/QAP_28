@@ -5,4 +5,5 @@ class AuthLocators:
     AUTH_EMAIL = (By.ID, "username")
     AUTH_PASS = (By.ID, "password")
     AUTH_BTN = (By.ID, "kc-login")
-
+    REG_LINK = (By.ID, "kc-register")
+    PHONE_ELEMENT = (By.ID, "t-btn-tab-phone")
