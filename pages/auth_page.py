@@ -1,6 +1,9 @@
 from .base_page import BasePage
 from .locators import AuthLocators
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 import time
 
 class AuthPage(BasePage):
@@ -14,26 +17,49 @@ class AuthPage(BasePage):
         self.passw = driver.find_element(*AuthLocators.AUTH_PASS)
         self.btn = driver.find_element(*AuthLocators.AUTH_BTN)
         self.reg = driver.find_element(*AuthLocators.REG_LINK)
-        self.phone_element = driver.find_element(*AuthLocators.PHONE_ELEMENT)
+        self.phone_tab_element = driver.find_element(*AuthLocators.PHONE_TAB_ELEMENT)
+        self.mail_tab_element = driver.find_element(*AuthLocators.MAIL_TAB_ELEMENT)
+        self.login_tab_element = driver.find_element(*AuthLocators.LOGIN_TAB_ELEMENT)
+        self.ls_tab_element = driver.find_element(*AuthLocators.LS_TAB_ELEMENT)
+        self.logo_element = driver.find_element(*AuthLocators.LOGO_ELEMENT)
+        self.info_element = driver.find_element(*AuthLocators.INFO_ELEMENT)
+        self.fogot_passw_element = driver.find_element(*AuthLocators.FOGOT_PASSW)
+        # self.error_massage = driver.find_element(*AuthLocators.ERROR_AUTH)
         # time.sleep(1)
 
     def get_phone_element(self):
-        return self.phone_element
+        return self.phone_tab_element
+    def get_mail_element(self):
+        return self.mail_tab_element
+    def get_login_element(self):
+        return self.login_tab_element
+    def get_ls_element(self):
+        return self.ls_tab_element
+    def get_login_field(self):
+        return self.phone
+    def get_passw_field(self):
+        return self.passw
+    def get_logo_element(self):
+        return self.logo_element
+    def get_info_element(self):
+        return self.info_element
+    def get_fogot_passw_element(self):
+        return self.fogot_passw_element
+    def get_btn_element(self):
+        return self.btn
+    def get_error_massage(self):
+        return self.driver.find_element(*AuthLocators.ERROR_AUTH).text
 
     def enter_phone(self, value):
-        self.email.send_keys(value)
-
+        self.phone.send_keys(value)
     def enter_email(self, value):
         self.email.send_keys(value)
-
     def enter_pass(self, value):
         self.passw.send_keys(value)
 
     def btn_click(self):
         self.btn.click()
-
     def reg_click(self):
         self.reg.click()
-
     def phone_element_click(self):
-        self.phone_element.click()
+        self.phone_tab_element.click()
