@@ -28,3 +28,7 @@ class AuthLocators:
     REG_BTN = (By.CSS_SELECTOR, "section#page-right > div > div > div > form > button")
     CONFIRM_EMAIL = (By.CSS_SELECTOR, "section#page-right > div > div > h1")
     REG_ERROR_NAME = (By.CSS_SELECTOR, "section#page-right > div > div > div > form > div > div > span")
+    REG_ERROR_LASTNAME = (By.CSS_SELECTOR, "#page-right > div > div > div > form > div.name-container > div:nth-child(2) > span")
+    REG_DIFF_PASSW = (By.CSS_SELECTOR, "#page-right > div > div > div > form > div.new-password-container > "
+                                           "div.rt-input-container.rt-input-container--error.new-password-container__confirmed-password > span")
+    REG_WRONG_PASSW = (By.CSS_SELECTOR, "section#page-right > div > div > div > form > div:nth-of-type(4) > div > span")

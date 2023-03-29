@@ -88,6 +88,12 @@ class AuthPage(BasePage):
 
     def get_reg_name_error(self):
         return self.driver.find_element(*AuthLocators.REG_ERROR_NAME)
+    def get_reg_lastname_error(self):
+        return self.driver.find_element(*AuthLocators.REG_ERROR_LASTNAME)
+    def get_diff_passw_error(self):
+        return self.driver.find_element(*AuthLocators.REG_DIFF_PASSW)
+    def get_wrong_pass_message(self):
+        return self.driver.find_element(*AuthLocators.REG_WRONG_PASSW)
 
 class RestorePage(BasePage):
 
